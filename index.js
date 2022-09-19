@@ -85,7 +85,7 @@ function submitForm(e) {
 
   const team = getFormValues();
   if (editId) {
-    console.warn("please edit", team);
+    console.warn("please edit id", editId, team);
   } else {
     createTeamRequest(team)
       .then((r) => r.json())
