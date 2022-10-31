@@ -29,7 +29,7 @@ function displayTeams(teams) {
 }
 
 function loadTeams() {
-  fetch("http://localhost:3000/teams")
+  fetch("http://localhost:3000/teams-json")
     .then(r => r.json())
     .then(teams => {
       allTeams = teams;
@@ -38,7 +38,7 @@ function loadTeams() {
 }
 
 function createTeamRequest(team) {
-  return fetch("http://localhost:3000/teams/create", {
+  return fetch("http://localhost:3000/teams-json/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -48,7 +48,7 @@ function createTeamRequest(team) {
 }
 
 function removeTeamRequest(id) {
-  return fetch("http://localhost:3000/teams/delete", {
+  return fetch("http://localhost:3000/teams-json/delete", {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json"
@@ -58,7 +58,7 @@ function removeTeamRequest(id) {
 }
 
 function updateTeamRequest(team) {
-  return fetch("http://localhost:3000/teams/update", {
+  return fetch("http://localhost:3000/teams-json/update", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -154,3 +154,5 @@ function initEvents() {
 
 loadTeams();
 initEvents();
+
+console.warn("yes");
